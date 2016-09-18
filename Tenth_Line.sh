@@ -20,10 +20,16 @@
 
 # Read from the file file.txt and output the tenth line to stdout.
 
-#Method 1:
+#Method 1.1:
 nl=$(wc -l file.txt | awk '{print $1}') #Notice that wc -l will output "nl file.txt"
 if [ $nl -lt 10 ]; then
     echo ''
 else
     head -10 file.txt | tail -1
 fi
+
+#Method 1.2
+tail +10 file.txt | head -1 #tail +x will output from line x to end of file
+
+#Method 2:
+awk '{NR == 10}' | file.txt
