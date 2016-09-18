@@ -1,0 +1,1 @@
+# shell_problems_and_tricks
